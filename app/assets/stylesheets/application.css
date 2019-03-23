@@ -13,7 +13,29 @@
  *= require_tree .
  *= require_self
  */
- 
+
  .navbar-dark .navbar-nav .nav-link {
      color: white;
  }
+
+ .carousel-item {
+     width: 100%;
+ }
+
+ .glow {
+    color: #fff;
+    text-align: center;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+  }
+  
+  @-webkit-keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #1fbb00, 0 0 40px #36be00, 0 0 50px #57c200, 0 0 60px #3bbb00, 0 0 70px #3bb900;
+    }
+    
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #94ff4d, 0 0 40px #8eff4d, 0 0 50px #94ff4d, 0 0 60px #62ff4d, 0 0 70px #7fff4d, 0 0 80px #85ff4d;
+    }
+  }
