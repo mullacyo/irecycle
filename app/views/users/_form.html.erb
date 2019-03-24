@@ -1,57 +1,60 @@
-<%= form_with(model: user, local: true) do |form| %>
-  <% if user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+<div class = "container col-md-10 text-center">
+  <%= form_with(model: user, local: true) do |form| %>
+    <% if user.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-      <ul>
-      <% user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    
+    <div class="field">
+      <%= form.label :first_name %>
+      <%= form.text_field :first_name, type: 'form-control', :class => "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :last_name %>
+      <%= form.text_field :last_name, type: 'form-control', :class => "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :phone_number %>
+      <%= form.text_field :phone, type: 'form-control', :class => "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :email %>
+      <%= form.text_field :email, type: 'form-control', :class => "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :password %>
+      <%= form.password_field :password, :class => "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :password_confirmation %>
+      <%= form.password_field :password_confirmation, :class => "form-control" %>
+    </div>
+
+    <div class="radio d-inline" style="margin: 10vw">
+      <%= form.radio_button(:roles, "user") %>
+      <%= form.label(:roles, "User") %>
+    </div>
+
+    <div class="radio d-inline" style="margin: 10vw">
+      <%= form.radio_button(:roles, "truck") %>
+      <%= form.label(:roles, "Recycling Center") %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit :class => "btn btn-outline form-control", :style => "border-color: #3ac9c6; color: #3ac9c6" %>
     </div>
   <% end %>
-  
-  <div class="radio">
-    <%= form.radio_button(:roles, "user") %>
-    <%= form.label(:roles, "User") %>
-  </div>
+</div>
 
-  <div class="radio">
-    <%= form.radio_button(:roles, "truck") %>
-    <%= form.label(:roles, "Recycling Center") %>
-  </div>
-
-  <div class="field">
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :phone_number %>
-    <%= form.text_field :phone %>
-  </div>
-
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
-
-  <div class="field">
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
-
-  <div class="field">
-    <%= form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>

@@ -1,9 +1,17 @@
+<div class = "container col-md-10 text-center"> 
   <div class="field">
     <%= form.label :address %>
-    <%= form.text_field :address %>
+    <%= form.text_field :address, type: 'form-control', :class => "form-control" %>
   </div>
 
   <div class="field">
     <%= form.label :date %>
-    <%= form.date_field :time %>
+    <%= form.date_field :time, :class => "form-control" %>
   </div>
+
+  <br>
+  
+  <div class="submit-field">
+      <%= form.submit "Submit", :class => "btn btn-outline-success my-2 my-sm-0 form-control" %>
+  </div>
+</div>

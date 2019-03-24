@@ -1,32 +1,28 @@
 <h1>Leaderboard</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Rank</th>
-      <th colspan="5"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @count = 1 %>
-    <% @users.each do |user| %>
+<div class = "container col-md-10 text-center">
+  <table class="table">
+    <thead class="thead-light">
       <tr>
-        <td><%= @count %></td>
-        <td><%= user.first_name %> <%= user.last_name %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% if user.waste.nil? %>
-        <% else %>
-          <td><%= user.waste.round(1) %> kg</td>
-        <% end %>
-        <% @count += 1 %>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Recycled</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
-
-<%= link_to 'New User', new_user_path %>
+    <tbody>
+      <% @count = 1 %>
+      <% @users.each do |user| %>
+        <tr>
+          <th scope="row"><%= @count %></td>
+          <td><%= user.first_name %> <%= user.last_name %></td>
+          <% if user.waste.nil? %>
+          <% else %>
+            <td><%= user.waste.round(1) %> kg</td>
+          <% end %>
+          <% @count += 1 %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

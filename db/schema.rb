@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2019_03_24_035852) do
   end
 
   create_table "trucks", force: :cascade do |t|
+    t.string "address"
     t.datetime "time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -32,6 +33,7 @@ ActiveRecord::Schema.define(version: 2019_03_24_035852) do
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
+    t.integer "phone"
     t.string "email"
     t.string "password_digest"
     t.integer "roles", default: 0
