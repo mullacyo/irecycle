@@ -5,8 +5,11 @@
       <div class="carousel-caption">
           <h1 class="display-2 glow">iRecycle</h1>
           <h3 class="glow">Turn your recyclable goods into rewards!</h3>
-          <button type="submit" class="btn btn-success btn-lg">Log In</button>
-          <button type="submit" class="btn btn-primary btn-lg">Register</button>
+          <% if current_user %>
+          <% else %>
+              <%= link_to "Log In", login_path, :class => "btn btn-success btn-lg" %>
+              <%= link_to "Register", new_user_path, :class => "btn btn-primary btn-lg" %>
+          <%end%>
       </div>
     </div>
     <div class="carousel-item">
