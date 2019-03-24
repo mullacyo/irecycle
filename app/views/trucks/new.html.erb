@@ -1,0 +1,10 @@
+<h1>New Appointment</h1>
+
+<%= form_with model: @truck do |form| %>
+    <%= render partial: '/trucks/form', object: form %>
+
+    <div class="submit-field">
+        <%= form.submit "Submit" %>
+    </div>
+
+<% end %>
