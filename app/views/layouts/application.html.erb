@@ -30,10 +30,10 @@
         <ul class="navbar-nav ml-auto">
           <% if current_user %>
             <li class="nav-item">
-              <a class="nav-link" href="#">Tracker</a>
+              <%= link_to "Tracker", trucks_path, :class => "nav-link" %>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Appointment</a>
+              <%= link_to "Schedule", new_truck_path, :class => "nav-link" %>
             </li>
             <li class="nav-item">
               <%= link_to "Leaderboard", users_path, :class => "nav-link" %>
