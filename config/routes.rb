@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'machine/index'
   get 'rewards/index'
   root 'welcome#index'
 
