@@ -10,6 +10,16 @@
       </ul>
     </div>
   <% end %>
+  
+  <div class="radio">
+    <%= form.radio_button(:roles, "user") %>
+    <%= form.label(:roles, "User") %>
+  </div>
+
+  <div class="radio">
+    <%= form.radio_button(:roles, "truck") %>
+    <%= form.label(:roles, "Recycling Center") %>
+  </div>
 
   <div class="field">
     <%= form.label :first_name %>
