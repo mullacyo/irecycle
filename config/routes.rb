@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'rewards/index'
   root 'welcome#index'
   
   resources :users

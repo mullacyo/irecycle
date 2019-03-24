@@ -1,0 +1,8 @@
+<h1>Rewards</h1>
+<% @rewards.each do |reward| %>
+    <%= reward.name %><br>
+    <%= reward.sponsor %><br>
+    <%= reward.price %><br>
+    <button type="submit" href="#">Redeem</button>
+    <br>
+<% end %>
